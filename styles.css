@@ -142,11 +142,6 @@ img { display: block; max-width: 100%; }
   padding-top: 96px; padding-bottom: 80px;
   position: relative;
 }
-.hero::before {
-  content: ""; position: absolute; inset: -40px -10% auto auto; width: 520px; height: 520px; z-index: -1;
-  background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 14%, transparent), transparent);
-  pointer-events: none;
-}
 .hero-text { grid-area: text; }
 .hero h1 {
   font-size: clamp(40px, 5.6vw, 70px); line-height: 1.06; letter-spacing: -0.045em;
@@ -202,8 +197,6 @@ img { display: block; max-width: 100%; }
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background-image: linear-gradient(#ffffff08 1px, transparent 1px), linear-gradient(90deg, #ffffff08 1px, transparent 1px);
   background-size: 28px 28px;
-  mask-image: radial-gradient(ellipse at 80% 50%, #000 10%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse at 80% 50%, #000 10%, transparent 70%);
 }
 .project-topline { display: flex; justify-content: space-between; align-items: center; padding-bottom: 22px; border-bottom: 1px solid #35434c; position: relative; }
 .project-number { color: #aebbc1; }
@@ -300,10 +293,6 @@ img { display: block; max-width: 100%; }
 
 /* ---------- Contact ---------- */
 .contact-section { background: var(--dark); color: #fff; padding: 96px 0; position: relative; overflow: hidden; }
-.contact-section::before {
-  content: ""; position: absolute; width: 600px; height: 600px; right: -150px; top: -200px;
-  background: radial-gradient(closest-side, #3a987833, transparent); pointer-events: none;
-}
 .contact-inner { position: relative; }
 .contact-inner h2 { font-size: clamp(34px, 5vw, 60px); line-height: 1.08; letter-spacing: -0.045em; margin: 18px 0; font-weight: 600; }
 .contact-inner > p:not(.eyebrow) { color: #bac6cb; max-width: 480px; font-size: 15px; }
@@ -396,11 +385,10 @@ img { display: block; max-width: 100%; }
 }
 
 /* ---------- Mobile polish ---------- */
-/* Stop decorative glows from creating a sideways scroll (clip keeps the sticky header working). */
+/* Prevent sideways scroll on small screens (clip keeps the sticky header working). */
 html, body { overflow-x: clip; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 a, button { -webkit-tap-highlight-color: transparent; }
-.hero::before { right: 0; max-width: 100%; }
 
 /* Hover lifts only on devices with a real pointer, so cards don't "stick" raised after a tap. */
 @media (hover: none) {
